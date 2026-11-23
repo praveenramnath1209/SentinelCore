@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Reports.css - Compliance & Analytics Reports
+   ========================================================================== */
+
+.reports-page {
+  padding: 24px 32px;
+  width: 100%;
+}
+
+.export-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.export-btn.pdf {
+  background: var(--status-critical-subtle);
+  color: var(--status-critical);
+  border-color: var(--status-critical-border);
+}
+.export-btn.pdf:hover {
+  background: var(--status-critical);
+  color: #ffffff;
+}
+
+.export-btn.excel {
+  background: var(--status-healthy-subtle);
+  color: var(--status-healthy);
+  border-color: var(--status-healthy-border);
+}
+.export-btn.excel:hover {
+  background: var(--status-healthy);
+  color: #ffffff;
+}
+
+.export-btn.csv {
+  background: var(--primary-subtle);
+  color: var(--primary);
+  border-color: rgba(99, 102, 241, 0.25);
+}
+.export-btn.csv:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.report-table th {
+  padding: 14px 18px;
+  text-align: left;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-surface);
+}
+
+.report-table td {
+  padding: 13px 18px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+
+.report-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+@media (max-width: 640px) {
+  .reports-page {
+    padding: 16px;
+  }
+}

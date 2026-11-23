@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Users.css - User & Role Management
+   ========================================================================== */
+
+.users-page {
+  padding: 24px 32px;
+  width: 100%;
+}
+
+.summary-card.admin {
+  border-color: rgba(99, 102, 241, 0.25);
+}
+.summary-card.admin svg { color: var(--primary); }
+
+.summary-card.analyst {
+  border-color: rgba(6, 182, 212, 0.25);
+}
+.summary-card.analyst svg { color: var(--accent-cyan); }
+
+.summary-card.operator {
+  border-color: rgba(245, 158, 11, 0.25);
+}
+.summary-card.operator svg { color: var(--status-warning); }
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th {
+  padding: 14px 18px;
+  text-align: left;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-surface);
+}
+
+.user-table td {
+  padding: 13px 18px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+
+.user-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.user-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Edit Modal */
+.user-edit-modal {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  max-width: 520px;
+  width: 100%;
+  padding: 24px;
+}
+
+.user-edit-modal h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 640px) {
+  .users-page {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,393 @@
+/* ==========================================================================
+   Auth.css - SentinelCore SecureOps | Cyber-grade Authentication Portal
+   ========================================================================== */
+
+/* Full viewport dark background — no gaps ever */
+html, body, #root {
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Force dark background on auth pages */
+body:has(.auth-container) {
+  background: #070b14 !important;
+}
+
+/* Auth wrapper — full screen dark cyber background */
+.auth-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #070b14;
+  padding: 24px;
+  box-sizing: border-box;
+  /* Fallback if CSS variables not loaded yet */
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Animated gradient mesh background */
+.auth-container::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(99, 102, 241, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 80% 80%, rgba(6, 182, 212, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 60% 10%, rgba(79, 70, 229, 0.12) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Cyber grid overlay */
+.auth-container::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================
+   Auth Card
+   ========================================= */
+
+.auth-card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 440px;
+  background: rgba(10, 15, 28, 0.92);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 20px;
+  padding: 44px 40px 40px;
+  box-sizing: border-box;
+  /* Layered glow shadow */
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.1),
+    0 24px 48px rgba(0, 0, 0, 0.7),
+    0 0 80px rgba(99, 102, 241, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  text-align: center;
+}
+
+/* Top accent line */
+.auth-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #6366f1, #06b6d4, transparent);
+  border-radius: 100%;
+}
+
+/* =========================================
+   Logo
+   ========================================= */
+
+.auth-card .logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.auth-card .logo svg {
+  font-size: 30px;
+  color: #6366f1;
+  filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.7));
+  flex-shrink: 0;
+}
+
+.auth-card .logo h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 60%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* =========================================
+   Headings & Sub
+   ========================================= */
+
+.auth-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.auth-card > p {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0 0 32px 0;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* =========================================
+   Form Layout
+   ========================================= */
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   Inputs
+   ========================================= */
+
+.auth-card input,
+.auth-card select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  background: rgba(7, 11, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.auth-card input::placeholder {
+  color: #475569;
+  font-size: 0.875rem;
+}
+
+.auth-card input:focus,
+.auth-card select:focus {
+  border-color: #6366f1;
+  background: rgba(10, 14, 26, 0.95);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2), 0 0 20px rgba(99, 102, 241, 0.08);
+}
+
+.auth-card select {
+  cursor: pointer;
+  color: #f1f5f9;
+}
+
+.auth-card select option {
+  background: #0d1424;
+  color: #f1f5f9;
+}
+
+/* =========================================
+   Password Box
+   ========================================= */
+
+.password-box {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+}
+
+.password-box input {
+  flex: 1;
+  padding-right: 48px;
+}
+
+.password-box .eye {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  outline: none;
+  color: #475569;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+  transition: color 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.password-box .eye:hover {
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* =========================================
+   Submit Button
+   ========================================= */
+
+.login-btn {
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(99, 102, 241, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.login-btn:active:not(:disabled) {
+  transform: translateY(0px);
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.4);
+}
+
+.login-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================
+   Footer Link
+   ========================================= */
+
+.bottom-link {
+  margin-top: 24px;
+  font-size: 0.84rem;
+  color: #475569;
+  text-align: center;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.bottom-link a {
+  color: #818cf8;
+  font-weight: 600;
+  margin-left: 5px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.bottom-link a:hover {
+  color: #a5b4fc;
+  text-decoration: underline;
+}
+
+/* =========================================
+   Divider (for register page extras)
+   ========================================= */
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.auth-divider span {
+  font-size: 0.75rem;
+  color: #475569;
+  white-space: nowrap;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* =========================================
+   Error / info messages
+   ========================================= */
+
+.auth-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  color: #fca5a5;
+  text-align: left;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* =========================================
+   Animated scanning line
+   ========================================= */
+
+@keyframes scanLine {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 36px 24px 32px;
+    border-radius: 16px;
+  }
+
+  .auth-card .logo h1 {
+    font-size: 1.3rem;
+  }
+
+  .auth-card h2 {
+    font-size: 1.15rem;
+  }
+}

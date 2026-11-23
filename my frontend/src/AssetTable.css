@@ -1,0 +1,203 @@
+/* ==========================================================================
+   AssetTable.css - Modern Dark Theme Table Styles
+   ========================================================================== */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+}
+
+.asset-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/* Header */
+.asset-table thead tr {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.asset-table th {
+  padding: 14px 18px;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Rows */
+.asset-table tbody tr {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--transition-fast);
+}
+
+.asset-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.asset-table td {
+  padding: 13px 18px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.asset-table td:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Asset Status Badges */
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+}
+
+.status.active {
+  background: var(--status-healthy-subtle);
+  color: var(--status-healthy);
+  border: 1px solid var(--status-healthy-border);
+}
+
+.status.healthy {
+  background: var(--status-healthy-subtle);
+  color: var(--status-healthy);
+  border: 1px solid var(--status-healthy-border);
+}
+
+.status.warning {
+  background: var(--status-warning-subtle);
+  color: var(--status-warning);
+  border: 1px solid var(--status-warning-border);
+}
+
+.status.inactive {
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--text-muted);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.status.critical {
+  background: var(--status-critical-subtle);
+  color: var(--status-critical);
+  border: 1px solid var(--status-critical-border);
+}
+
+/* Risk Badges */
+.risk-low {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  background: var(--status-healthy-subtle);
+  color: var(--status-healthy);
+  font-weight: 600;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.risk-medium {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  background: var(--status-warning-subtle);
+  color: var(--status-warning);
+  font-weight: 600;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.risk-high {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  background: var(--status-critical-subtle);
+  color: var(--status-critical);
+  font-weight: 600;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.view-btn {
+  background: var(--primary-subtle);
+  color: var(--primary);
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+.view-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.edit-btn {
+  background: var(--accent-cyan-subtle);
+  color: var(--accent-cyan);
+  border-color: rgba(6, 182, 212, 0.25);
+}
+
+.edit-btn:hover {
+  background: var(--accent-cyan);
+  color: #ffffff;
+}
+
+.delete-btn {
+  background: var(--status-critical-subtle);
+  color: var(--status-critical);
+  border-color: var(--status-critical-border);
+}
+
+.delete-btn:hover {
+  background: var(--status-critical);
+  color: #ffffff;
+}
+
+/* Empty State */
+.no-data {
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.no-data h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.no-data p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
